@@ -52,7 +52,7 @@ tools/                       各片通用的辅助脚本
 ## 五、换机器
 
 ```bash
-git clone <本仓库地址> AIvideo && cd AIvideo
+git clone https://github.com/Et3rW/AIvideo-opus.git && cd AIvideo-opus
 pnpm install --frozen-lockfile
 pip install -r requirements.txt   # 或用已有的、版本一致的 Python 环境
 git clone --depth 1 --filter=blob:none --no-checkout https://github.com/Vincentwei1021/mg-styles-15.git references/mg-styles-15
