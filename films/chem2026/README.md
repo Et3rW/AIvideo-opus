@@ -10,7 +10,7 @@
 |---|---|
 | `chem2026.mp4` | 成片（不进 git，用 `build.sh` 复刻） |
 | `src/` | Remotion 源码：`Film.tsx` 总装，`cues.json` 场景时间表（画面和配乐共用，含 BPM），`scenes/` 各场景，`ui.tsx` 纸张/网格/出字/风车符号/章节卡等组件，`anim.ts` 缓动与动画工具，`theme.ts` 配色与网格模数 |
-| `audio/chem2026_audio.py` | 配乐与音效合成（numpy/scipy，固定随机种子；合成器函数沿用 `films/nobel2026`） |
+| `audio/chem2026_audio.py` | 配乐与音效合成（numpy/scipy，固定随机种子；合成器函数沿用 `films/nobel-physics-2026-icecube`） |
 | `audio/master.sh` | 两遍 ffmpeg loudnorm 母带处理 |
 | `assets/audio.wav` | 母带后的配乐，渲染时直接引用（不进 git，`build.sh` 缺失时自动生成） |
 | `build.sh` | 一键复现，产物写入 `build/` |

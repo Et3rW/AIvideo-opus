@@ -12,7 +12,7 @@ import soundfile as sf
 from scipy import signal
 
 SR = 48000
-ROOT = pathlib.Path(__file__).resolve().parents[1]  # films/nobel2026
+ROOT = pathlib.Path(__file__).resolve().parents[1]  # films/nobel-physics-2026-icecube
 CUES = json.loads((ROOT / 'src/cues.json').read_text())
 DUR = CUES['duration']
 N = int(DUR * SR)

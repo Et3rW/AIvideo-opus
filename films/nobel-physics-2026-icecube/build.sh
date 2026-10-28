@@ -1,7 +1,8 @@
 #!/bin/zsh
-# 一键复现。用法：./build.sh [audio|video|all]，默认 all。
+# 一键复现。用法：./build.sh [audio|video|cover|all]，默认 all。
 #   audio  合成配乐 → 母带。assets/audio.wav 不存在时生成到那里；已存在则生成到 build/audio.wav 并比对 PCM
-#   video  渲染整片到 build/nobel2026.mp4（缺配乐时先跑 audio）
+#   video  渲染整片到 build/nobel-physics-2026-icecube.mp4（缺配乐时先跑 audio）
+#   cover  渲染封面到 build/cover-16x9.png（1920×1080）和 build/cover-4x3.png（1440×1080）
 # 产物只写进 build/ 或缺失的 assets/audio.wav，不覆盖已有文件；确认无误后再手动替换。
 set -e
 FILM=$(cd "$(dirname "$0")" && pwd)
@@ -29,7 +30,16 @@ if [[ $STEP == video || $STEP == all ]]; then
   [[ -e $ASSET ]] || audio
   mkdir -p "$FILM/build"
   cd "$ROOT"
-  npx remotion render src/index.ts Nobel2026 "$FILM/build/nobel2026.mp4" \
+  npx remotion render src/index.ts NobelPhysics2026 "$FILM/build/nobel-physics-2026-icecube.mp4" \
     --image-format=jpeg --crf=16 --x264-preset=slow --log=error
-  echo "渲染完成：$FILM/build/nobel2026.mp4"
+  echo "渲染完成：$FILM/build/nobel-physics-2026-icecube.mp4"
+fi
+
+if [[ $STEP == cover || $STEP == all ]]; then
+  mkdir -p "$FILM/build"
+  cd "$ROOT"
+  for r in 16x9 4x3; do
+    npx remotion still src/index.ts NobelPhysics2026-Cover$r "$FILM/build/cover-$r.png" --log=error
+  done
+  echo "封面完成：$FILM/build/cover-16x9.png、cover-4x3.png"
 fi

@@ -4,7 +4,7 @@
 
 | 作品 | 说明 |
 |---|---|
-| [`films/nobel2026`](films/nobel2026/) | 2026 诺贝尔物理学奖：冰立方与高能中微子（4:10，1080p60，字幕 + 配乐） |
+| [`films/nobel-physics-2026-icecube`](films/nobel-physics-2026-icecube/) | 2026 诺贝尔物理学奖：冰立方与高能中微子（4:10，1080p60，字幕 + 配乐） |
 
 - 工作约定（选风格流程、工程结构、检查标准、版本管理、换机器）见 [`AGENTS.md`](AGENTS.md)。
 - 成片不进 git，在各片目录运行 `build.sh` 复刻，详见各片 README。
@@ -30,7 +30,7 @@
 git clone https://github.com/Et3rW/AIvideo-opus.git && cd AIvideo-opus
 pnpm install --frozen-lockfile
 pip install -r requirements.txt     # 或使用版本一致的已有 Python 环境
-films/nobel2026/build.sh            # 生成配乐并渲染，成片在 films/nobel2026/build/
+films/nobel-physics-2026-icecube/build.sh   # 生成配乐并渲染，成片在 films/nobel-physics-2026-icecube/build/
 ```
 
 只改画面、想实时预览时运行 `pnpm studio`。风格参考仓库只在让 agent 做新片时需要，克隆方法见 `AGENTS.md`「换机器」一节；复刻已有作品不需要它。

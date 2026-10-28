@@ -71,10 +71,11 @@ const frag = /* glsl */ `
   }
 `;
 
-const Detector: React.FC = () => {
+/** time：固定在某一时刻（封面用）；cam：覆盖默认的环绕机位 */
+export const Detector: React.FC<{time?: number; cam?: {az: number; el: number; rad: number}}> = ({time, cam}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const t = frame / fps;
+  const t = time ?? frame / fps;
   const {camera} = useThree();
   const geo = useMemo(() => {
     const g = new THREE.BufferGeometry();
@@ -113,9 +114,9 @@ const Detector: React.FC = () => {
   const backRef = useRef<THREE.Mesh>(null);
 
   // 镜头：缓慢环绕
-  const az = 0.35 + t * 0.075;
-  const el = 0.32 - prog(t, 0, 16, ease.inOutCubic) * 0.12;
-  const rad = 2.75 - prog(t, 0, 9, ease.inOutCubic) * 0.45 + prog(t, 10, 6, ease.inOutCubic) * 0.35;
+  const az = cam?.az ?? 0.35 + t * 0.075;
+  const el = cam?.el ?? 0.32 - prog(t, 0, 16, ease.inOutCubic) * 0.12;
+  const rad = cam?.rad ?? 2.75 - prog(t, 0, 9, ease.inOutCubic) * 0.45 + prog(t, 10, 6, ease.inOutCubic) * 0.35;
   camera.position.set(Math.cos(az) * Math.cos(el) * rad, Math.sin(el) * rad, Math.sin(az) * Math.cos(el) * rad);
   camera.lookAt(0, -0.02, 0);
 

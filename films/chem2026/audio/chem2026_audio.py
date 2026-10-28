@@ -1,6 +1,6 @@
 """2026 诺贝尔化学奖短片配乐：纯 numpy/scipy 合成（无采样、无外部音频），120 BPM 极简电子。
 
-合成器与音效函数沿用 films/nobel2026/audio/nobel2026_audio.py，编曲与音效时间点为本片新写。
+合成器与音效函数沿用 films/nobel-physics-2026-icecube/audio/nobel2026_audio.py，编曲与音效时间点为本片新写。
 
 时间点与 src/cues.json 的场景表一一对应；场景内的动作时间（局部秒）写在 CUES 里。
 输出：build/audio_raw.wav（未做响度标准化），再由 master.sh 用 ffmpeg loudnorm 母带到 −14 LUFS。

@@ -6,23 +6,25 @@
 
 | 路径 | 内容 |
 |---|---|
-| `nobel2026.mp4` | 成片（不进 git，用 `build.sh` 复刻） |
+| `nobel-physics-2026-icecube.mp4` | 成片（不进 git，用 `build.sh` 复刻） |
+| `cover-16x9.png`、`cover-4x3.png` | 封面，1920×1080 与 1440×1080（不进 git，`build.sh cover` 复刻） |
 | `src/` | Remotion 源码：`Film.tsx` 总装，`cues.json` 场景时间表（画面和配乐共用），`scenes/` 各场景，`ui.tsx` 镜头/贴纸/文字组件，`anim.ts` 缓动与动画工具，`theme.ts` 配色与字体 |
 | `audio/nobel2026_audio.py` | 配乐与音效合成（numpy/scipy，固定随机种子） |
 | `audio/master.sh` | 两遍 ffmpeg loudnorm 母带处理 |
 | `assets/audio.wav` | 母带后的配乐，渲染时直接引用（不进 git，`build.sh` 缺失时自动生成） |
-| `build.sh` | 一键复现，产物写入 `build/` |
+| `src/Cover.tsx` | 封面：复用片中三维事件显示（固定在事件完全点亮的时刻）+ 大标题 |
+| `build.sh` | 一键复现（配乐、成片、封面），产物写入 `build/` |
 
-工作区根目录的 `src/index.ts`、`src/Root.tsx` 负责注册合成（`Nobel2026`），`package.json` + `pnpm-lock.yaml` 锁定前端依赖，根目录 `requirements.txt` 锁定配乐用的 Python 包。
+工作区根目录的 `src/index.ts`、`src/Root.tsx` 负责注册合成（`NobelPhysics2026`），`package.json` + `pnpm-lock.yaml` 锁定前端依赖，根目录 `requirements.txt` 锁定配乐用的 Python 包。
 
 ## 复现
 
 ```bash
 pnpm install --frozen-lockfile        # 在工作区根目录，node_modules 缺失时
-films/nobel2026/build.sh              # 配乐 + 渲染；也可只跑 audio 或 video
+films/nobel-physics-2026-icecube/build.sh   # 配乐 + 成片 + 封面；也可只跑 audio、video 或 cover
 ```
 
-成片出现在 `films/nobel2026/build/nobel2026.mp4`。已有的 `assets/audio.wav` 和成片不会被覆盖。
+成片出现在 `films/nobel-physics-2026-icecube/build/nobel-physics-2026-icecube.mp4`。已有的 `assets/audio.wav` 和成片不会被覆盖。
 
 配乐基准：`assets/audio.wav` 的 PCM MD5 应为 `d8b41dab0c2decc24022157f6855f799`（`build.sh audio` 会打印）。Python 包版本不同时可能不再逐字节一致，但听感相同。
 

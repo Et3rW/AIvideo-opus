@@ -1,7 +1,7 @@
 #!/bin/zsh
 # 抽帧检查：打包一次，按秒数渲染半分辨率静帧，拼成 2x2 联系表（红线分隔）
 # 用法: tools/stills.sh <合成ID> <输出目录> <秒> [<秒> ...]
-#   例: tools/stills.sh Nobel2026 /tmp/check 91 94 97.5
+#   例: tools/stills.sh NobelPhysics2026 /tmp/check 91 94 97.5
 # 输出目录必须是新目录（脚本不清空已有目录）
 set -e
 ID=$1; OUT=$2; shift 2

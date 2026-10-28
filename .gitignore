@@ -6,6 +6,7 @@ references/
 
 # 成片与可再生成的产物：用 films/<片名>/build.sh 复现
 films/*/*.mp4
+films/*/cover-*.png
 films/*/build/
 films/*/assets/audio.wav
 

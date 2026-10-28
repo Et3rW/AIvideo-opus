@@ -24,6 +24,7 @@ src/index.ts, src/Root.tsx   入口；Root 里为每部片子登记一个 <Compo
 src/assets.d.ts              音频等静态资源的类型声明
 films/<片名>/                一部片子的全部内容，不要散落到别处
   ├── <片名>.mp4             成片（不进 git）
+  ├── cover-16x9.png 等      封面（不进 git）；源码在 src/Cover.tsx，在 src/Root.tsx 里登记为 <Still>
   ├── README.md              说明、复现步骤、环境版本、风格选择、资料来源
   ├── build.sh               一键复现，产物只写入 build/（或缺失的 assets/audio.wav），不覆盖已有文件
   ├── src/                   画面源码；cues.json 是场景时间表（画面和配乐共用）
@@ -33,7 +34,7 @@ references/                  外部参考仓库，只读
 tools/                       各片通用的辅助脚本
 ```
 
-可复用的组件（镜头、贴纸、出字、缓动等）目前在 `films/nobel2026/src/ui.tsx`、`anim.ts`，新片可以复制过去改。包豪斯风格的纸纹、网格线、遮罩出字、描线生长、逐列落下的章节卡在 `films/chem2026/src/ui.tsx`；Remotion 里的三维球棍分子模型见 `films/chem2026/src/scenes/Chiral.tsx`。
+可复用的组件（镜头、贴纸、出字、缓动等）目前在 `films/nobel-physics-2026-icecube/src/ui.tsx`、`anim.ts`，新片可以复制过去改。包豪斯风格的纸纹、网格线、遮罩出字、描线生长、逐列落下的章节卡在 `films/chem2026/src/ui.tsx`；Remotion 里的三维球棍分子模型见 `films/chem2026/src/scenes/Chiral.tsx`。
 
 ## 三、制作与检查
 

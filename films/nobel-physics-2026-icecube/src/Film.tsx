@@ -30,7 +30,7 @@ const SCENES: Record<string, React.FC> = {
 };
 
 /** 思源黑体按 unicode-range 分片加载：每帧把当前画面上的字都请求一遍，加载完再截图。 */
-const FontWait: React.FC = () => {
+export const FontWait: React.FC = () => {
   useLayoutEffect(() => {
     const h = delayRender('fonts');
     const text = document.body.innerText + '0123456789';
