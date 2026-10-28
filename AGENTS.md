@@ -33,7 +33,7 @@ references/                  外部参考仓库，只读
 tools/                       各片通用的辅助脚本
 ```
 
-可复用的组件（镜头、贴纸、出字、缓动等）目前在 `films/nobel2026/src/ui.tsx`、`anim.ts`，新片可以复制过去改。
+可复用的组件（镜头、贴纸、出字、缓动等）目前在 `films/nobel2026/src/ui.tsx`、`anim.ts`，新片可以复制过去改。包豪斯风格的纸纹、网格线、遮罩出字、描线生长、逐列落下的章节卡在 `films/chem2026/src/ui.tsx`；Remotion 里的三维球棍分子模型见 `films/chem2026/src/scenes/Chiral.tsx`。
 
 ## 三、制作与检查
 

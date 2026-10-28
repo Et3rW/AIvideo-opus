@@ -1,0 +1,14 @@
+{
+  "fps": 60,
+  "bpm": 120,
+  "duration": 240,
+  "scenes": [
+    {"id": "hook", "start": 0, "end": 16},
+    {"id": "nobel", "start": 16, "end": 36},
+    {"id": "chiral", "start": 36, "end": 72, "chapter": "01", "title": "分子的左右手"},
+    {"id": "mystery", "start": 72, "end": 114, "chapter": "02", "title": "百年谜题"},
+    {"id": "kagan", "start": 114, "end": 160, "chapter": "03", "title": "卡甘：非线性效应"},
+    {"id": "soai", "start": 160, "end": 210, "chapter": "04", "title": "硖合宪三：自催化"},
+    {"id": "future", "start": 210, "end": 240, "chapter": "05", "title": "镜子之后"}
+  ]
+}
