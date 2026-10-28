@@ -42,6 +42,11 @@ films/nobel-chemistry-2026-chirality/build.sh   # 配乐 + 成片 + 封面；也
 
 配乐基准：`assets/audio.wav` 的 PCM MD5 应为 `1ebdda95c8a1e6f9f938cc7b4d1cfd01`（`build.sh audio` 会打印）。Python 包版本不同时可能不再逐字节一致，但听感相同。
 
+2026-10-28 改名后，从干净克隆实测：
+- 配乐重新合成后与 `assets/audio.wav` 逐字节一致，成片音轨一致。
+- 重新渲染的画面与成片相比 SSIM 0.99974、PSNR 平均 63 dB（最低 51 dB），14400 帧。Chromium/GPU 光栅化有微小差异，所以视频不是逐字节一致。
+- 封面 4:3 逐字节一致；16:9 的 PSNR 为 97 dB，肉眼无差别。
+
 ## 当时的环境
 
 - macOS（Apple M5），Node 26.12.1，pnpm 12.15.0，Remotion 4.0.539，three 0.186.1，React 19.3
