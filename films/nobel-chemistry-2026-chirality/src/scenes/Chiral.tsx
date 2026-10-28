@@ -131,7 +131,7 @@ const Molecule: React.FC<{x: number; th: number; mirror: boolean; scale: number;
   );
 };
 
-const Stage: React.FC<{t: number}> = ({t}) => {
+export const Stage: React.FC<{t: number}> = ({t}) => {
   const {camera} = useThree();
   camera.position.copy(CAM.pos);
   camera.lookAt(CAM.look);

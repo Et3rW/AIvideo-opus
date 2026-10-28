@@ -34,7 +34,7 @@ references/                  外部参考仓库，只读
 tools/                       各片通用的辅助脚本
 ```
 
-可复用的组件（镜头、贴纸、出字、缓动等）目前在 `films/nobel-physics-2026-icecube/src/ui.tsx`、`anim.ts`，新片可以复制过去改。包豪斯风格的纸纹、网格线、遮罩出字、描线生长、逐列落下的章节卡在 `films/chem2026/src/ui.tsx`；Remotion 里的三维球棍分子模型见 `films/chem2026/src/scenes/Chiral.tsx`。
+可复用的组件（镜头、贴纸、出字、缓动等）目前在 `films/nobel-physics-2026-icecube/src/ui.tsx`、`anim.ts`，新片可以复制过去改。包豪斯风格的纸纹、网格线、遮罩出字、描线生长、逐列落下的章节卡在 `films/nobel-chemistry-2026-chirality/src/ui.tsx`；Remotion 里的三维球棍分子模型见 `films/nobel-chemistry-2026-chirality/src/scenes/Chiral.tsx`。
 
 ## 三、制作与检查
 
@@ -50,6 +50,7 @@ tools/                       各片通用的辅助脚本
 - 追踪：源码、场景时间表、配乐脚本、README、构建脚本、依赖锁定文件（`pnpm-lock.yaml`、`requirements.txt`）。
 - 不追踪（见 `.gitignore`）：成片 mp4、`build/`、可由脚本逐字节生成的 `assets/audio.wav`、`node_modules/`、`references/`。
 - 新片要保证：干净克隆后跑 `films/<片名>/build.sh` 就能复刻；手工制作、无法用脚本再生成的素材要进 git。
+- `src/Root.tsx` 打包时会引入所有片子的 `assets/audio.wav`，所以 `build.sh` 在渲染前要先跑 `tools/ensure-audio.sh` 补齐缺失的配乐（照抄现有片子的写法）。
 
 ## 五、换机器
 

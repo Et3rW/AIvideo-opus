@@ -9,6 +9,7 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 [[ -e $OUT ]] && { echo "输出目录已存在：$OUT，请换一个新目录"; exit 1; }
 mkdir -p $OUT/bundle
 cd $ROOT
+zsh tools/ensure-audio.sh
 npx remotion bundle src/index.ts --out-dir=$OUT/bundle --log=error >/dev/null
 FPS=$(npx remotion compositions $OUT/bundle 2>&1 | awk -v id=$ID '$1==id{print $2}')
 for s in "$@"; do

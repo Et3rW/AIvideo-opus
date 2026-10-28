@@ -8,14 +8,16 @@
 
 | 路径 | 内容 |
 |---|---|
-| `chem2026.mp4` | 成片（不进 git，用 `build.sh` 复刻） |
+| `nobel-chemistry-2026-chirality.mp4` | 成片（不进 git，用 `build.sh` 复刻） |
+| `cover-16x9.png`、`cover-4x3.png` | 封面，1920×1080 与 1440×1080（不进 git，`build.sh cover` 复刻） |
 | `src/` | Remotion 源码：`Film.tsx` 总装，`cues.json` 场景时间表（画面和配乐共用，含 BPM），`scenes/` 各场景，`ui.tsx` 纸张/网格/出字/风车符号/章节卡等组件，`anim.ts` 缓动与动画工具，`theme.ts` 配色与网格模数 |
 | `audio/chem2026_audio.py` | 配乐与音效合成（numpy/scipy，固定随机种子；合成器函数沿用 `films/nobel-physics-2026-icecube`） |
 | `audio/master.sh` | 两遍 ffmpeg loudnorm 母带处理 |
 | `assets/audio.wav` | 母带后的配乐，渲染时直接引用（不进 git，`build.sh` 缺失时自动生成） |
-| `build.sh` | 一键复现，产物写入 `build/` |
+| `src/Cover.tsx` | 封面：复用 01 章的三维 L/D-丙氨酸与镜面（两个分子都已出现、还没开始转的时刻）+ 大标题 |
+| `build.sh` | 一键复现（配乐、成片、封面），产物写入 `build/` |
 
-工作区根目录的 `src/Root.tsx` 注册合成 `Chem2026`。
+工作区根目录的 `src/Root.tsx` 注册合成 `NobelChemistry2026` 和两张封面 `NobelChemistry2026-Cover16x9`、`-Cover4x3`。
 
 ## 结构
 
@@ -33,10 +35,10 @@
 
 ```bash
 pnpm install --frozen-lockfile        # 在工作区根目录，node_modules 缺失时
-films/chem2026/build.sh               # 配乐 + 渲染；也可只跑 audio 或 video
+films/nobel-chemistry-2026-chirality/build.sh   # 配乐 + 成片 + 封面；也可只跑 audio、video 或 cover
 ```
 
-成片出现在 `films/chem2026/build/chem2026.mp4`。已有的 `assets/audio.wav` 和成片不会被覆盖。
+成片出现在 `films/nobel-chemistry-2026-chirality/build/nobel-chemistry-2026-chirality.mp4`。已有的 `assets/audio.wav` 和成片不会被覆盖。
 
 配乐基准：`assets/audio.wav` 的 PCM MD5 应为 `1ebdda95c8a1e6f9f938cc7b4d1cfd01`（`build.sh audio` 会打印）。Python 包版本不同时可能不再逐字节一致，但听感相同。
 
