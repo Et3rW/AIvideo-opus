@@ -1,0 +1,15 @@
+{
+  "fps": 60,
+  "duration": 250,
+  "scenes": [
+    {"id": "hook", "start": 0, "end": 15},
+    {"id": "nobel", "start": 15, "end": 36},
+    {"id": "ghost", "start": 36, "end": 74, "chapter": "01", "title": "幽灵粒子"},
+    {"id": "cosmic", "start": 74, "end": 110, "chapter": "02", "title": "宇宙射线之谜"},
+    {"id": "icecube", "start": 110, "end": 150, "chapter": "03", "title": "南极冰下的望远镜"},
+    {"id": "deep", "start": 150, "end": 164},
+    {"id": "event3d", "start": 164, "end": 180},
+    {"id": "discover", "start": 180, "end": 222, "chapter": "04", "title": "来自宇宙深处"},
+    {"id": "future", "start": 222, "end": 250, "chapter": "05", "title": "新的眼睛"}
+  ]
+}

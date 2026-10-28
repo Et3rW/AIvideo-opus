@@ -1,0 +1,44 @@
+{
+  "name": "aivideo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "studio": "remotion studio",
+    "render:preview": "remotion render --codec=h264 --hardware-acceleration=required --video-bitrate=12M --image-format=jpeg --scale=0.5 --color-space=bt709",
+    "render:final": "remotion render --codec=h264 --crf=16 --x264-preset=slow --image-format=png --pixel-format=yuv420p --color-space=bt709 --audio-codec=aac --audio-bitrate=320k",
+    "render:master": "remotion render --codec=prores --prores-profile=hq --hardware-acceleration=if-possible --image-format=png",
+    "still:cpu": "remotion still --gl=swangle"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "private": "true",
+  "dependencies": {
+    "@fontsource/noto-sans-sc": "^5.3.1",
+    "@fontsource/noto-serif-sc": "^5.3.1",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.2",
+    "@remotion/cli": "^4.0.539",
+    "@remotion/media-utils": "^4.0.539",
+    "@remotion/three": "^4.0.539",
+    "postprocessing": "^6.39.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.539",
+    "three": "^0.186.1",
+    "troika-three-text": "^0.52.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=26"
+  }
+}

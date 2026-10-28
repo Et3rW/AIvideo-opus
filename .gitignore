@@ -1,0 +1,13 @@
+# 依赖
+node_modules/
+
+# 外部参考仓库（自带 git，按 AGENTS.md「换机器」一节重新克隆）
+references/
+
+# 成片与可再生成的产物：用 films/<片名>/build.sh 复现
+films/*/*.mp4
+films/*/build/
+films/*/assets/audio.wav
+
+# 系统文件
+.DS_Store

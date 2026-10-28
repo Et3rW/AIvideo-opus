@@ -1,0 +1,4 @@
+# 配乐合成（films/*/audio/*.py）所需 Python 包；按这些版本合成可得到逐字节一致的音频
+numpy==2.5.4
+scipy==1.18.1
+soundfile==0.14.0
